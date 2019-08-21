@@ -11,3 +11,5 @@ def process(n1, n2, opfun):
 
 
 process(10, 20, mul)
+
+process(10, 20, lambda a, b: a + b)
