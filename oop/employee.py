@@ -1,6 +1,5 @@
 class Employee:
     # class attributes
-
     hraper = 30
 
     # Static method or class method
@@ -14,7 +13,7 @@ class Employee:
         return e
 
     # Constructor
-    def __init__(self, name, salary):
+    def __init__(self, name, salary=0):
         # object attributes
         self.name = name
         self.salary = salary  # Private
@@ -22,19 +21,23 @@ class Employee:
     def print_details(self):
         print(self.name, self.salary)
 
+    @property
     def net_salary(self):
         return self.salary + (self.salary * Employee.hraper / 100)
 
+    def __eq__(self, other):
+        return self.name == other.name and self.salary == other.salary
 
-e1 = Employee("Scott", 60000)
-e2 = Employee("Tom", 40000)
-e3 = Employee("Tom", 40000)
-print(e2 == e3)
-e4 = Employee.create_trainee("Bill")
-e4.print_details()
+    def __gt__(self, other):
+        return self.salary > other.salary
 
-# e1.print_details()
-Employee.set_hraper(40)
-print(e1.net_salary())
-print(e2.net_salary())
+    def __str__(self):
+        return f"{self.name} - {self.salary}"
 
+    def __int__(self):
+        return self.salary
+
+
+e2 = Employee("Tom", 50000)
+print(e2)
+print(e2.net_salary)
