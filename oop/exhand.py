@@ -10,4 +10,3 @@ except ZeroDivisionError as ex:
     print("Sorry! Number cannot be zero!")
 finally:
     pass
-
