@@ -1,0 +1,4 @@
+This is to test our program which is used to count how many
+times each word occurs in the given file.
+
+This could be used for sentiment analysis.
